@@ -58,8 +58,10 @@ public class Control extends HttpServlet {
         //processRequest(request, response);
         response.setContentType("text/html;charset=UTF-8");
 
-        String n = request.getParameter("txt_nombres");
-        String a = request.getParameter("txt_apellidos");
+        String n = request.getParameter("txt_nombre");
+        String a = request.getParameter("txt_apellido");
+        String c = request.getParameter("txt_codigo");
+        String e = request.getParameter("txt_correo");
 
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -69,11 +71,11 @@ public class Control extends HttpServlet {
             out.println("<title>respuesta1</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Nombre: Ivan Santiago Bejarano Ramos / Codigo: 20201578083 </h1>");
             out.println("<br>");
             out.println("<br>");
-            out.println("<h1>El domiciolio llegò: " + n + " " + a + "</h1>");
-            out.println("<h1>esta es un respuesta control</h1>");
+            out.println("<h1>El domiciolio llegó: " + n + " " + a +" "+ c +"</h1>");
+            out.println("<h1>su correo: "+ e +"</h1>");
+            out.println("<footer>Ivan Santiago Bejarano Ramos / 20201578083 </footer>");
             out.println("</body>");
             out.println("</html>");
         }
